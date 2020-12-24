@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dockerfile 常用指令 | SailorCai 的个人主页</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="shortcut icon" type="image/x-icon" href="/blog/logo.ico">
+    <meta name="description" content="Adroi">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.6238c46d.css" as="style"><link rel="preload" href="/blog/assets/js/app.edd000f7.js" as="script"><link rel="preload" href="/blog/assets/js/2.53587c18.js" as="script"><link rel="preload" href="/blog/assets/js/13.994ee369.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.d4aad0d8.js"><link rel="prefetch" href="/blog/assets/js/11.1fb10e0d.js"><link rel="prefetch" href="/blog/assets/js/12.5c111591.js"><link rel="prefetch" href="/blog/assets/js/14.d5e3658a.js"><link rel="prefetch" href="/blog/assets/js/15.2a669442.js"><link rel="prefetch" href="/blog/assets/js/16.e011ca16.js"><link rel="prefetch" href="/blog/assets/js/17.3412d80e.js"><link rel="prefetch" href="/blog/assets/js/18.4b0a31c5.js"><link rel="prefetch" href="/blog/assets/js/19.e2535cb3.js"><link rel="prefetch" href="/blog/assets/js/3.e43c79e2.js"><link rel="prefetch" href="/blog/assets/js/4.f7eb1a97.js"><link rel="prefetch" href="/blog/assets/js/5.85bcd237.js"><link rel="prefetch" href="/blog/assets/js/6.3204f482.js"><link rel="prefetch" href="/blog/assets/js/7.21b067ae.js"><link rel="prefetch" href="/blog/assets/js/8.11094b90.js"><link rel="prefetch" href="/blog/assets/js/9.47481874.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.6238c46d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/avatar.jpg" alt="SailorCai 的个人主页" class="logo"> <span class="site-name can-hide">SailorCai 的个人主页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/blog/serverend/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/blog/frontend/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/blog/life/" class="nav-link">
+  生活随笔
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/blog/serverend/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/blog/frontend/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/blog/life/" class="nav-link">
+  生活随笔
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/serverend/" aria-current="page" class="sidebar-link">序</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/serverend/docker_anz.html" class="sidebar-link">docker 安装</a></li><li><a href="/blog/serverend/learn_docker_1.html" class="sidebar-link">docker 入门</a></li><li><a href="/blog/serverend/learn_docker_2.html" class="sidebar-link">docker 第二节</a></li><li><a href="/blog/serverend/Dockerfile_1.html" aria-current="page" class="active sidebar-link">Dockerfile 常用指令</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>服务器笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/serverend/ubuntu_node.html" class="sidebar-link">Ubuntu 安装最新版 nodejs</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dockerfile-常用指令"><a href="#dockerfile-常用指令" class="header-anchor">#</a> Dockerfile 常用指令</h1> <p>docker 依据 Dockerfile 文件构建镜像，当你需要定制镜像的时候就会用到</p> <h3 id="from"><a href="#from" class="header-anchor">#</a> FROM</h3> <p>FROM：定制的镜像都是基于 FROM 的镜像，这里的 nginx 就是定制需要的基础镜像。后续的操作都是基于 nginx。</p> <h3 id="run"><a href="#run" class="header-anchor">#</a> RUN</h3> <p>RUN：用于执行后面跟着的命令行命令。有以下两种格式：</p> <p><strong>shell 格式：</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>RUN <span class="token operator">&lt;</span>命令行命令<span class="token operator">&gt;</span>
+<span class="token comment"># &lt;命令行命令&gt; 等同于，在终端操作的 shell 命令。</span>
+</code></pre></div><p><strong>exec 格式：</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>RUN <span class="token punctuation">[</span><span class="token string">&quot;可执行文件&quot;</span>, <span class="token string">&quot;参数1&quot;</span>, <span class="token string">&quot;参数2&quot;</span><span class="token punctuation">]</span>
+<span class="token comment"># 例如：</span>
+<span class="token comment"># RUN [&quot;./test.php&quot;, &quot;dev&quot;, &quot;offline&quot;] 等价于 RUN ./test.php dev offline</span>
+</code></pre></div><h3 id="cmd"><a href="#cmd" class="header-anchor">#</a> CMD</h3> <p>类似于 RUN 指令，用于运行程序，但二者运行的时间点不同:</p> <blockquote><p>CMD 在 docker run 时运行。
+RUN 是在 docker build。</p></blockquote> <p>作用：为启动的容器指定默认要运行的程序，程序运行结束，容器也就结束。CMD 指令指定的程序可被 docker run 命令行参数中指定要运行的程序所覆盖。</p> <p>注意：如果 Dockerfile 中如果存在多个 CMD 指令，仅最后一个生效。</p> <p>格式：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>CMD <span class="token operator">&lt;</span>shell 命令<span class="token operator">&gt;</span>
+CMD <span class="token punctuation">[</span><span class="token string">&quot;&lt;可执行文件或命令&gt;&quot;</span>,<span class="token string">&quot;&lt;param1&gt;&quot;</span>,<span class="token string">&quot;&lt;param2&gt;&quot;</span>,<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+CMD <span class="token punctuation">[</span><span class="token string">&quot;&lt;param1&gt;&quot;</span>,<span class="token string">&quot;&lt;param2&gt;&quot;</span>,<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token comment"># 该写法是为 ENTRYPOINT 指令指定的程序提供默认参数</span>
+</code></pre></div><p>推荐使用第二种格式，执行过程比较明确。第一种格式实际上在运行的过程中也会自动转换成第二种格式运行，并且默认可执行文件是 sh。</p> <h3 id="copy"><a href="#copy" class="header-anchor">#</a> COPY</h3> <p>复制指令，从上下文目录中复制文件或者目录到容器里指定路径。</p> <p>格式：</p> <blockquote><p>COPY [--chown=<user>:<group>] &lt;源路径 1&gt;... &lt;目标路径&gt;
+COPY [--chown=<user>:<group>] [&quot;&lt;源路径 1&gt;&quot;,... &quot;&lt;目标路径&gt;&quot;]。
+[--chown=<user>:<group>]：可选参数，用户改变复制到容器内文件的拥有者和属组。</group></user></group></user></group></user></p></blockquote> <p>&lt;源路径&gt;：源文件或者源目录，这里可以是通配符表达式，其通配符规则要满足 Go 的 filepath.Match 规则。例如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>COPY hom* /mydir/
+COPY hom?.txt /mydir/
+</code></pre></div><p>&lt;目标路径&gt;：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</p> <h3 id="add"><a href="#add" class="header-anchor">#</a> ADD</h3> <p>ADD 指令和 COPY 的使用格式一致（同样需求下，官方推荐使用 COPY）。功能也类似，不同之处如下：</p> <blockquote><p>ADD 的优点：在执行 &lt;源文件&gt; 为 tar 压缩文件的话，压缩格式为 gzip, bzip2 以及 xz 的情况下，会自动复制并解压到 &lt;目标路径&gt;。
+ADD 的缺点：在不解压的前提下，无法复制 tar 压缩文件。会令镜像构建缓存失效，从而可能会令镜像构建变得比较缓慢。具体是否使用，可以根据是否需要自动解压来决定。</p></blockquote> <h3 id="env"><a href="#env" class="header-anchor">#</a> ENV</h3> <p>设置环境变量，定义了环境变量，那么在后续的指令中，就可以使用这个环境变量。</p> <p>格式：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ENV <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>value<span class="token operator">&gt;</span>
+ENV <span class="token operator">&lt;</span>key<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span><span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> <span class="token operator">&lt;</span>key<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token punctuation">..</span>.
+</code></pre></div><p>以下示例设置 NODE_VERSION = 7.2.0 ， 在后续的指令中可以通过 $NODE_VERSION 引用：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ENV NODE_VERSION <span class="token number">7.2</span>.0
+
+RUN <span class="token function">curl</span> -SLO <span class="token string">&quot;https://nodejs.org/dist/v<span class="token variable">$NODE_VERSION</span>/node-v<span class="token variable">$NODE_VERSION</span>-linux-x64.tar.xz&quot;</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">curl</span> -SLO <span class="token string">&quot;https://nodejs.org/dist/v<span class="token variable">$NODE_VERSION</span>/SHASUMS256.txt.asc&quot;</span>
+</code></pre></div><h3 id="volume"><a href="#volume" class="header-anchor">#</a> VOLUME</h3> <p>定义匿名数据卷。在启动容器时忘记挂载数据卷，会自动挂载到匿名卷。</p> <p>作用：</p> <blockquote><p>避免重要的数据，因容器重启而丢失，这是非常致命的。
+避免容器不断变大。</p></blockquote> <p><strong>格式：</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>VOLUME <span class="token punctuation">[</span><span class="token string">&quot;&lt;路径 1&gt;&quot;</span>, <span class="token string">&quot;&lt;路径 2&gt;&quot;</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+VOLUME <span class="token operator">&lt;</span>路径<span class="token operator">&gt;</span>
+</code></pre></div><p>在启动容器 docker run 的时候，我们可以通过 -v 参数修改挂载点。</p> <h3 id="expose"><a href="#expose" class="header-anchor">#</a> EXPOSE</h3> <p>仅仅只是声明端口。</p> <p><strong>作用：</strong></p> <blockquote><p>帮助镜像使用者理解这个镜像服务的守护端口，以方便配置映射。
+在运行时使用随机端口映射时，也就是 docker run -P 时，会自动随机映射 EXPOSE 的端口。
+格式：</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>EXPOSE <span class="token operator">&lt;</span>端口 <span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>端口 <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre></div><h3 id="workdir"><a href="#workdir" class="header-anchor">#</a> WORKDIR</h3> <p>指定工作目录。用 WORKDIR 指定的工作目录，会在构建镜像的每一层中都存在。（WORKDIR 指定的工作目录，必须是提前创建好的）。</p> <p>docker build 构建镜像过程中的，每一个 RUN 命令都是新建的一层。只有通过 WORKDIR 创建的目录才会一直存在。</p> <p>格式：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>WORKDIR <span class="token operator">&lt;</span>工作目录路径<span class="token operator">&gt;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/serverend/learn_docker_2.html" class="prev">
+        docker 第二节
+      </a></span> <span class="next"><a href="/blog/serverend/ubuntu_node.html">
+        Ubuntu 安装最新版 nodejs
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.edd000f7.js" defer></script><script src="/blog/assets/js/2.53587c18.js" defer></script><script src="/blog/assets/js/13.994ee369.js" defer></script>
+  </body>
+</html>
